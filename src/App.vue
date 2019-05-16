@@ -55,8 +55,8 @@
         video-time="time"
         video-scroll="scroll"
         video-set-height="set-height"
-        video-src="http://nmdap.udn.com.tw/upf/newmedia/2019_data/heat_island/wind_2.mp4"
-        video-src-mp4="http://nmdap.udn.com.tw/upf/newmedia/2019_data/heat_island/wind_2.mp4" >
+        :video-src="video1"
+        :video-src-mp4="video1" >
     </ScrollVideo>
     <div class="container">
       <p>hello</p>

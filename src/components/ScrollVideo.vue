@@ -18,17 +18,21 @@
     </div>
     <div class="video-time" :id="videoTime"></div>
     <div class="video-scroll" :id="videoScroll"></div>
-    <video class="video-player sticky" data-margin-top="0" data-sticky-for="1023" data-sticky-class="is-sticky" :id="videoName" tabindex="0" autobuffer="autobuffer" preload="preload"><source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="videoSource"></source>
-        <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://nmdap.udn.com.tw/upf/newmedia/2019_data/heat_island/wind_2.mp4"></source>
-        <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="videoSourceMp4"></source>
-        <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
-    </video>
+    <div id="either-gif-or-video">
+      <video  class="video-player sticky" data-margin-top="0" data-sticky-for="1023" data-sticky-class="is-sticky" :id="videoName" :src="video1" autobuffer autoplay loop muted playsinline></video>
+      <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="video1" webkit-playsinline="true"></source>
+      <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="video1"></source>
+      <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="video1"></source>
+      <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
+      <img src="image.gif">
+    </div>
   </div>
 </template>
 
 <script>
 import { clearInterval } from 'timers';
 import Sticky from 'sticky-js'
+
 
 export default {
   name: 'ScrollVideo',
@@ -44,7 +48,8 @@ export default {
           accelamount: 0.01,
           bounceamount: 0,
           intervalMark: 0,
-          videoPosition: 0
+          videoPosition: 0,
+          video1: require("../../public/wind_3.mp4")
       }
   },
   props: {
