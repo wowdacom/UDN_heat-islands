@@ -1,67 +1,122 @@
 <template>
   <div id="app">
-    <section id="titlechart">
-      <div id="description">
-        <h1 class="badge gsap">Simple Tweening</h1>
-        <h2>Two examples of basic animation.</h2>
-        <ol>
-          <li>When no duration is defined for the scene, the tween will simply start playing when the scroll reaches the trigger position.</li>
-          <li>If the scene has a duration the progress of the tween will directly correspond to the scroll position.</li>
-        </ol>
-        <p>
-          This example uses the shorthand version of <a href="../../docs/animation.GSAP.html#Scene.setTween">Scene.setTween()</a> to add <a href="http://greensock.com/docs/#/HTML5/GSAP/TweenMax/to/" target="_blank">TweenMax.to()</a> animations.<br>
-          To see how to build more advanced tweens check out the <a href="../advanced/advanced_tweening.html">Advanced Tweening Example</a><a>.
-        </a></p><a>
-        </a><a href="#" class="viewsource">view source</a>
-      </div>
-    </section>
-    <section class="demo">
-      <div class="spacer s2"></div>
-      <div id="trigger1" class="spacer s0"></div>
-      <div id="animate1" class="box2 skin">
-        <p>You wouldn't like me, when I'm angry!</p>
-        <a href="#" class="viewsource">view source</a>
-      </div>
-      <div class="spacer s2"></div>
-    </section>
-    <section class="demo">
-      <div class="spacer s1"></div>
-      <div id="trigger2" class="spacer s1"></div>
-      <div class="spacer s0"></div>
-      <div id="animate2" class="box1 black">
-        <p>Smurf me!</p>
-        <a href="#" class="viewsource">view source</a>
-      </div>
-      <div class="spacer s2"></div>
-    </section>
-    <div class="spacer s_viewport"></div>
-     <!-- <ScrollVideo 
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+     <ScrollVideo 
         video-name="v0"
         video-time="time"
         video-scroll="scroll"
         video-set-height="set-height"
         video-src="http://nmdap.udn.com.tw/upf/newmedia/2019_data/heat_island/wind_2.mp4"
         video-src-mp4="http://nmdap.udn.com.tw/upf/newmedia/2019_data/heat_island/wind_2.mp4" >
-    </ScrollVideo> -->
-    <!-- <div ref="set-height" id="set-height"></div>
-    <p id="time"></p>
-    <video @click="handleVideoChange" ref="v0" id="v0" tabindex="0" autobuffer="autobuffer" preload="preload">
-      <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" src="../public/test1.mp4"></source>
-      <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="../public/test1.mp4"></source>
-      <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
-    </video> -->
+    </ScrollVideo>
+    <div class="container">
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+      <p>hello</p>
+    </div>
     
-    <button @click="handleVideoChange">切換影片</button>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import ScrollVideo from './components/ScrollVideo.vue'
-import test1 from  "../public/test1.mp4"
-import test2 from  "../public/test2.mp4"
-import test3 from  "../public/test3.mp4"
-import test4 from  "../public/test4.mp4"
 import { setTimeout } from 'timers';
 import ScrollMagic from 'scrollmagic'
 
@@ -69,9 +124,7 @@ export default {
   name: 'app',
   data () {
     return {
-      currentVideoSource: require("../public/test1.mp4"),
       currentVideo: 0,
-      videoList: [test1, test2, test3, test4],
       frameNumber: 0,
       playbackConst: 500, 
       setHeight: this.$refs['set-height'],        
@@ -142,11 +195,6 @@ export default {
     }
   },
   computed: {
-    cureentVideo () {
-      let vm = this
-      this.currentVideoSource = this.videoList[vm.currentVideo]
-      return currentVideoSource
-    }
   }
 }
 </script>
@@ -163,7 +211,7 @@ export default {
     display: block;
   }
   #v0 {
-    position: fixed ;
+    position: absolute ;
     top: 0;
     left: 0;
     width: 100%;
@@ -208,13 +256,15 @@ export default {
 }
 
   @keyframes dash2 {
-  from {
-    stroke-dashoffset: 260;
+    from {
+      stroke-dashoffset: 260;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
   }
-  to {
-    stroke-dashoffset: 0;
+  .container {
+    margin-top: 100px;
   }
-}
-  
 }
 </style>
