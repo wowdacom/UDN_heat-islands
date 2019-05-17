@@ -19,12 +19,12 @@
     <div class="video-time" :id="videoTime"></div>
     <div class="video-scroll" :id="videoScroll"></div>
     <div id="either-gif-or-video">
-      <video  class="video-player sticky" data-margin-top="0" data-sticky-for="1023" data-sticky-class="is-sticky" :id="videoName" :src="video1" autobuffer autoplay loop muted playsinline></video>
+      <video  class="video-player sticky" width="100vw" data-margin-top="0" data-sticky-for="1023" data-sticky-class="is-sticky" :id="videoName" :src="video1" preload="metadata" autobuffer autoplay loop muted playsinline></video>
       <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="video1" webkit-playsinline="true"></source>
       <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="video1"></source>
       <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="video1"></source>
       <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
-      <img src="image.gif">
+      <!-- <img src="image.gif"> -->
     </div>
   </div>
 </template>
@@ -164,8 +164,10 @@ export default {
     }
     .video-player {
         position: absolute;
+        width: 100vw;
         height: 100vh;
         z-index: -100;
+        object-fit: fill;
     }
     p font-family helvetica {
         font-size: 24px;
