@@ -23,7 +23,7 @@
       <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" :src="video1" webkit-playsinline="true"></source>
       <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" :src="video1"></source>
       <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" :src="video1"></source>
-      <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
+
       <!-- <img src="image.gif"> -->
     </div>
   </div>
@@ -118,9 +118,6 @@ export default {
         var sticky = new Sticky('.sticky');
 
         // and when parent change height..
-        
-
-        console.log(this.videoPosition)
 
         if ( this.videoPosition < currentH && currentH < this.videoPosition + 4000) {
           this.targetscrollpos = (window.pageYOffset - this.videoPosition)/500;
@@ -164,7 +161,7 @@ export default {
     }
     .video-player {
         position: absolute;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         z-index: -100;
         object-fit: fill;
