@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <section id="titlechart">
+    <!-- <section id="titlechart">
       <div id="description">
         <h1 class="badge gsap">Simple Tweening</h1>
         <h2>Two examples of basic animation.</h2>
@@ -34,7 +34,7 @@
       </div>
       <div class="spacer s2"></div>
     </section>
-    <div class="spacer s_viewport"></div>
+    <div class="spacer s_viewport"></div> -->
      <!-- <ScrollVideo 
         video-name="v0"
         video-time="time"
@@ -58,10 +58,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import ScrollVideo from './components/ScrollVideo.vue'
-import test1 from  "../public/test1.mp4"
-import test2 from  "../public/test2.mp4"
-import test3 from  "../public/test3.mp4"
-import test4 from  "../public/test4.mp4"
+import wind from  "../public/wind_2.mp4"
 import { setTimeout } from 'timers';
 import ScrollMagic from 'scrollmagic'
 
@@ -69,14 +66,14 @@ export default {
   name: 'app',
   data () {
     return {
-      currentVideoSource: require("../public/test1.mp4"),
       currentVideo: 0,
-      videoList: [test1, test2, test3, test4],
       frameNumber: 0,
       playbackConst: 500, 
       setHeight: this.$refs['set-height'],        
       vid: this.$refs['v0'],
-      isClick: false
+      isClick: false,
+      video: null,
+      canvas: null
     }
   },
   components: {
@@ -100,6 +97,8 @@ export default {
                 .setTween("#animate2", {borderTop: "30px solid white", backgroundColor: "blue", scale: 0.7}) // the tween durtion can be omitted and defaults to 1
                 .addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)
                 .addTo(controller);
+
+    this.startPlayback();
     // this.$refs['v0'].addEventListener('loadedmetadata', function() {
     //   vm.$refs['set-height'].style.height = Math.floor(vm.$refs['v0'].duration) * vm.playbackConst + "px";
     // });
@@ -139,6 +138,28 @@ export default {
       //   this.currentVideo = 0
       // }
       // this.$refs['v0'].src = this.videoList[this.currentVideo]
+    },
+    startPlayback() {
+        let vm = this
+        if (!this.video) {
+            this.video = document.createElement('video');
+            this.video.src = wind;
+            this.video.loop = true;
+            this.video.addEventListener('playing', vm.paintVideo);
+        }
+        this.video.play();
+    }, paintVideo() {
+       let vm = this
+        if (!vm.canvas) {
+            vm.canvas = document.createElement('canvas');
+            vm.canvas.width = vm.video.videoWidth;
+            vm.canvas.height = vm.video.videoHeight;
+            document.body.appendChild(vm.canvas);
+        }
+        vm.canvas.getContext('2d').drawImage(vm.video, 0, 0, vm.canvas.width, vm.canvas.height);
+        if (!vm.video.paused) {
+            requestAnimationFrame(vm.paintVideo);
+        }
     }
   },
   computed: {
